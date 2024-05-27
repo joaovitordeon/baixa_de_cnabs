@@ -85,9 +85,8 @@ def main():
             count = 1
         
 
-        res = [novo_header] + res
-
-        arq_saida = '\n'.join(res)
+        arq_saida = novo_header + '\n'.join(res)
+        
         st.divider()
 
         st.download_button('Clique aqui para fazer o download do arquivo de saída ⬇️', arq_saida, type="primary")
