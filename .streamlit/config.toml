@@ -1,0 +1,9 @@
+[theme]
+base="dark"
+primaryColor="#ff5050"
+
+
+[server]
+maxUploadSize=1028
+maxMessageSize=1028
+enableXsrfProtection = false
