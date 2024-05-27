@@ -12,11 +12,11 @@ def main():
     
     
     st.write('\n')
-    arq2 = st.file_uploader("**Faça o upload com o CPF ou n° de boleto a serem alterados**", accept_multiple_files=False)
+    arq2 = st.file_uploader("**Faça o upload do arquivo txt contendo os CPFs ou Números dos boletos**", accept_multiple_files=False)
     
     
     st.write('\n')
-    seq = st.text_input("**Digite o número sequencial...**")
+    seq = st.text_input("**Digite o número sequencial (7 dígitos)...**")
     
     st.write('\n')
     
