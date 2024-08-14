@@ -28,7 +28,7 @@ def main():
 
         if arq1 is not None and arq2 is not None:
             # ------------------------------ dados arquivo 1 ---------------------------------------
-            buf_arq1 = StringIO(arq1.getvalue().decode("utf-16"))
+            buf_arq1 = StringIO(arq1.getvalue().decode("utf-8"))
             header_arq1 = buf_arq1.readline()
             dados_arq1 = buf_arq1.readlines()        
 
@@ -74,6 +74,7 @@ def main():
                             nova_linha = linha[:108] + '02' + linha[110:]
                             # alterar o contador no final de cada linha
                             nova_linha = nova_linha[:394] + str(count).zfill(6)
+                            
                             res.append(nova_linha)
                             
                             count+=1
@@ -81,8 +82,9 @@ def main():
             
             else:
                 pass
-
-            count = 1
+            
+            # adicionar última linha
+            res.append('9' + " "*393 + str(count).zfill(6))
         
 
         arq_saida = novo_header + '\n'.join(res)
